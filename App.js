@@ -51,7 +51,14 @@ scanBtn.addEventListener("click", async () => {
 
     results.classList.add("hidden");
 
-    await fakeAnalysis();
+    const text = await runOCR(selectedImages);
+
+loading.classList.add("hidden");
+
+results.classList.remove("hidden");
+
+transcription.value = text;
+
 
 });
 
