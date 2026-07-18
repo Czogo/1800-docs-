@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>Historical Document Investigator</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <script defer src="app.js"></script>
+    <script defer src="scanner.js"></script>
+    <script defer src="ocr.js"></script>
+    <script defer src="analysis.js"></script>
+    <script defer src="history.js"></script>
+    <script defer src="valuation.js"></script>
+    <script defer src="report.js"></script>
+</head>
+
+<body>
+
+<header>
+
+<h1>📜 Historical Document Investigator</h1>
+
+<p>
+Scan handwritten historical documents and automatically identify
+names, signatures, document type, historical importance,
+and estimated collector value.
+</p>
+
+</header>
+
+<main>
+
+<section class="uploadCard">
+
+<input
+type="file"
+id="imageInput"
+accept="image/*"
+capture="environment"
+multiple
+>
+
+<button id="scanButton">
+📷 Scan Documents
+</button>
+
+</section>
+
+<section id="previewSection">
+
+<h2>Images</h2>
+
+<div id="previewGrid"></div>
+
+</section>
+
+<section id="loadingSection" class="hidden">
+
+<div class="spinner"></div>
+
+<p>
+
+Reading handwriting...
+
+</p>
+
+</section>
+
+<section id="resultsSection" class="hidden">
+
+<h2>Results</h2>
+
+<div class="result">
+
+<label>Document Type</label>
+
+<div id="documentType"></div>
+
+</div>
+
+<div class="result">
+
+<label>Estimated Date</label>
+
+<div id="documentDate"></div>
+
+</div>
+
+<div class="result">
+
+<label>People Found</label>
+
+<ul id="peopleList"></ul>
+
+</div>
+
+<div class="result">
+
+<label>Detected Signatures</label>
+
+<div id="signatureCount"></div>
+
+</div>
+
+<div class="result">
+
+<label>Historical Importance</label>
+
+<div id="importance"></div>
+
+</div>
+
+<div class="result">
+
+<label>Estimated Collector Value</label>
+
+<div id="value"></div>
+
+</div>
+
+<div class="result">
+
+<label>Possible Buyers</label>
+
+<ul id="buyers"></ul>
+
+</div>
+
+<div class="result">
+
+<label>Full Transcription</label>
+
+<textarea
+id="transcription"
+rows="15"
+readonly
+></textarea>
+
+</div>
+
+<div class="buttons">
+
+<button id="downloadPDF">
+
+Download PDF Report
+
+</button>
+
+<button id="resetButton">
+
+Scan Another
+
+</button>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+
+Historical Document Investigator
+Version 1.0
+
+</footer>
+
+</body>
+</html>
