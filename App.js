@@ -71,6 +71,9 @@ async function fakeAnalysis() {
     results.classList.remove("hidden");
 
     const report = analyzeDocument(text);
+    const history = buildHistoricalSummary(text, report);
+
+console.log(history);
 
 documentType.textContent = report.type;
 documentDate.textContent = report.date;
