@@ -70,7 +70,39 @@ async function fakeAnalysis() {
 
     results.classList.remove("hidden");
 
-    showDemoResults();
+    const report = analyzeDocument(text);
+
+documentType.textContent = report.type;
+documentDate.textContent = report.date;
+importance.textContent = report.importance + "/100";
+value.textContent = report.value;
+signatures.textContent = report.signatures;
+
+people.innerHTML = "";
+
+report.names.forEach(name => {
+
+    const li = document.createElement("li");
+
+    li.textContent = name;
+
+    people.appendChild(li);
+
+});
+
+buyers.innerHTML = "";
+
+report.buyers.forEach(buyer => {
+
+    const li = document.createElement("li");
+
+    li.textContent = buyer;
+
+    buyers.appendChild(li);
+
+});
+
+transcription.value = text;
 
 }
 
