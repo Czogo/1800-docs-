@@ -5,15 +5,23 @@
 function analyzeDocument(text) {
 
     const report = {
-        type: detectDocumentType(text),
-        date: detectDate(text),
-        names: detectNames(text),
-        signatures: estimateSignatures(text),
-        counties: detectCounties(text),
-        importance: calculateImportance(text),
-        value: estimateValue(text),
-        buyers: suggestBuyers(text)
-    };
+    const report = {
+    type: detectDocumentType(text),
+    date: detectDate(text),
+    names: detectNames(text),
+
+    grantor: extractGrantor(text),
+    grantee: extractGrantee(text),
+    witnesses: extractWitnesses(text),
+    surveyor: extractSurveyor(text),
+    county: extractCounty(text),
+    landDescription: extractLandDescription(text),
+
+    signatures: estimateSignatures(text),
+    importance: calculateImportance(text),
+    value: estimateValue(text),
+    buyers: suggestBuyers(text)
+};
 
     return report;
 
